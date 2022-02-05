@@ -11,11 +11,11 @@
 <body>
  <div id="app">
      <label for="search">cerca</label>
-     <input @keyup.enter="findArray" v-model="search" id="search" type="text">
+     <input @keyup.enter="findArray" v-model="search" type="text">
      <ul class="container">
-         <li v-for="(car) in cars" :key="index">
+         <li v-for="(car,index) in cars" :key="index">
              <img :src="car.immagine" alt="">
-             <div v-for="(accessories) in car" :key="index">
+             <div v-for="(accessories,index) in car" :key="index">
                  {{accessories}}
              </div>
          </li>
