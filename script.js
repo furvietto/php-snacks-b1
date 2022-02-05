@@ -1,12 +1,19 @@
 const App = new Vue({
-    el: "app",
+    el: "#app",
     data:{
-        cards : []
+        cars:[],
+        search: ""
     },
     created() {
         axios.get('http://localhost:80/lezione-2-php/php-snacks-b1/controller.php').then((result) => {
-          this.cards = result.data.results;
+          this.cars = result.data.results;
           console.log(result);
         }).catch((error) => { console.log(error);});
     },
+    methods: {
+        findArray:function () {
+            console.log("ciao");
+        }
+    },
+  
 })
