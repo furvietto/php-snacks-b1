@@ -10,13 +10,56 @@
 </head>
 <body>
  <div id="app">
-     <label for="search">cerca</label>
-     <input @keyup.enter="findArray" v-model="search" type="text">
+     <div class="search">
+         <label for="search">cerca Marca o Colore</label>
+         <input placeholder="inserisci..." @keyup.enter="findArray" v-model="search" type="text">
+     </div>
      <ul class="container">
          <li v-for="(car,index) in cars" :key="index">
-             <img :src="car.immagine" alt="">
-             <div v-for="(accessories,index) in car" :key="index">
-                 {{accessories}}
+             <div class="img">
+                 <img :src="car.immagine" alt="">
+             </div>
+             <div>
+                 Marca: {{car.marca}}
+             </div>
+             <div>
+                 Carburante: {{car.carburante}}
+             </div>
+             <div>
+                 Modello: {{car.modello}}
+             </div>
+             <div>
+                 Anno: {{car.anno}}
+             </div>
+             <div>
+                 Cilindrata: {{car.cilindrata}}
+             </div>
+             <div>
+                 Trasmissione: {{car.trasmissione}}
+             </div>
+             <div>
+                 Km: {{car.km}}
+             </div>
+             <div>
+                 Colore: {{car.colore}}
+             </div>
+             <div>
+                 Prezzo: {{car.prezzo}}
+             </div>
+             <div>
+                 Accessori: {{car.accessori != "null" ? car.accessori : "risultato non disponibile" }}
+             </div>
+             <div>
+                 Numero Porte: {{car.nPorte}}
+             </div>
+             <div>
+                 Località: {{car.localita}}
+             </div>
+             <div>
+                 trazione: {{car.trazione != "null" ? car.trazione : "risultato non disponibile"}}
+             </div>
+             <div>
+                 Targa: {{car.targa != "null" ? car.targa : "risultato non disponibile"}}
              </div>
          </li>
      </ul>

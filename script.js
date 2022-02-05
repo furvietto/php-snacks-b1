@@ -18,7 +18,7 @@ const App = new Vue({
             }else{
                 this.cars = []
                 this.filter.forEach(element => {
-                    if (element.marca == this.search) {
+                    if (element.marca == this.search || element.colore == this.search) {
                         this.cars.push(element)
                     }
                 });
