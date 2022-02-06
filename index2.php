@@ -13,6 +13,10 @@ if (!empty($_GET["send"])) {
            }
        }
     }
+    if (count($auto) <= 0) {
+        $auto = $auto_usate;
+    }
+
 }
 ?>
 
@@ -29,7 +33,7 @@ if (!empty($_GET["send"])) {
  <div>
      <form action="index2.php" method="get">
          <div class="search">
-             <label for="search">cerca Marca o Colore</label>
+             <label for="search">Cerca</label>
              <input name="send" placeholder="inserisci..." type="text">
              <button>Invia</button>
          </div>
